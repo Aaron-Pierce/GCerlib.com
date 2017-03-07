@@ -1,0 +1,206 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Material Design Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./material.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+    </style>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+    <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Legacy Documentation</span>
+            <div class="mdl-layout-spacer"></div>
+
+        </div>
+    </header>
+    <div class="demo-ribbon"></div>
+    <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                    <div class="demo-crumbs mdl-color-text--grey-500"></div>
+                    <p>Functions in GCERlib2015 (updated last on April 24)</p>
+                    <p>&nbsp;</p>
+                    <p><strong>driveTrain</strong></p>
+                    <p>void describe_driveTrain(NARmotor leftw, NARmotor rightw, int diameter);</p>
+                    <p><em>Saves user entered data into the driveTrain structure. Must be called before using the camera, tophat_drive, et_drive, or driveTrain functions.</em></p>
+                    <p>&nbsp;</p>
+                    <p>int convert_mm_ticks(int millimeters);</p>
+                    <p>&nbsp;</p>
+                    <p>void driveTrain_move_ticks(int velocity, int ticks);</p>
+                    <p>&nbsp;</p>
+                    <p>void driveTrain_move_mm(int velocity, int millimeters);</p>
+                    <p>&nbsp;</p>
+                    <p>void driveTrain_accel_ticks(int v_initial, int v_final, int ticks);</p>
+                    <p>&nbsp;</p>
+                    <p>void driveTrain_accel_mm(int v_initial, int v_final, int millimeters);</p>
+                    <p>&nbsp;</p>
+                    <p>void driveTrain_spin_angle(int velocity, int angle);</p>
+                    <p>&nbsp;</p>
+                    <p><strong>camera </strong></p>
+                    <p><em>example code: </em></p>
+                    <p><em>camera scheme1 = create_camera_scheme(0, 0, 20);</em></p>
+                    <p><em> ...ending setup...</em></p>
+                    <p><em> camera_align_x(scheme1, 80, 500);</em></p>
+                    <p>&nbsp;</p>
+                    <p>camera create_camera_scheme(int channel, int object_count, int pixels_of_error);</p>
+                    <p><em> Must be called before using any of the other camera functions</em></p>
+                    <p>&nbsp;</p>
+                    <p>void camera_set_x(camera camera_properties, int x_coordinate);</p>
+                    <p><em>Sets the desired x_coordinate for the next call to camera_align(cameraName, velocity);</em></p>
+                    <p>&nbsp;</p>
+                    <p>void camera_set_y(camera camera_properties, int y_coordinate);</p>
+                    <p><em>Sets the desired y_coordinate for the next call to camera_align(cameraName, velocity);</em></p>
+                    <p>&nbsp;</p>
+                    <p>void camera_calibrate_position(camera camera_properties);</p>
+                    <p><em>Sets the desired x and y coordinates based off of the object seen by the camera.</em></p>
+                    <p>&nbsp;</p>
+                    <p>void camera_set_object_count(camera camera_properties, int object_count);</p>
+                    <p><em>Sets the object count for the specified camera scheme.</em></p>
+                    <p>&nbsp;</p>
+                    <p>void camera_align_x(camera camera_properties, int x_coordinate, int velocity);</p>
+                    <p>&nbsp;</p>
+                    <p>void camera_align_y(camera camera_properties, int y_coordinate, int velocity);</p>
+                    <p>&nbsp;</p>
+                    <p>void camera_align(camera camera_properties, int velocity);//not finished</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p><strong>tophat_drive </strong></p>
+                    <p>void tophat_calibrate(int right_port, int left_port);</p>
+                    <p><em>Guides user through process of setting calibrating the tophats. Must be called before other tophat_drive functions.</em></p>
+                    <p>&nbsp;</p>
+                    <p>void tophat_drive_follow_left(...);//not finished</p>
+                    <p>&nbsp;</p>
+                    <p>void tophat_drive_follow_right(...);//not finished</p>
+                    <p>&nbsp;</p>
+                    <p>void tophat_align_black(int velocity);</p>
+                    <p>&nbsp;</p>
+                    <p>void tophat_align_white(int velocity);</p>
+                    <p>&nbsp;</p>
+                    <p><strong>et_drive </strong></p>
+                    <p>void describe_et_drive(int head_port, int tail_port, int head_per_5mm, int tail_per_5mm);</p>
+                    <p><em>Saves specified data concerning the et driveTrain. Must be called before using other et_drive functions.</em></p>
+                    <p>&nbsp;</p>
+                    <p>void et_drive_follow(int ticks_per_second);//not finished</p>
+                    <p><em>Follows wall using the two et sensors previously described.</em></p>
+                    <p>&nbsp;</p>
+                    <p>void et_drive_align(int ticks_per_second);//not finished</p>
+                    <p><em>Aligns on wall using the two er sensors previously described.</em></p>
+                    <p>&nbsp;</p>
+                    <p><strong>et </strong></p>
+                    <p><em>Example code:</em></p>
+                    <p><em> NARet et1 = create_et(4, 465);</em></p>
+                    <p><em> et_get_mm(et1);</em></p>
+                    <p>&nbsp;</p>
+                    <p>NARet create_et(int port, int range_per_5mm);</p>
+                    <p>&nbsp;</p>
+                    <p>float et_get_mm(NARet etName);</p>
+                    <p>&nbsp;</p>
+                    <p><strong>create_drive</strong></p>
+                    <p>float create_get_charge();</p>
+                    <p>&nbsp;</p>
+                    <p>void create_drive_segment(int speed, int distance_mm);</p>
+                    <p>&nbsp;</p>
+                    <p>void create_spin(int velocity);</p>
+                    <p>&nbsp;</p>
+                    <p>void create_spin_angle(int speed, int angle);</p>
+                    <p>&nbsp;</p>
+                    <p>void create_wait_for_bump(int velocity);</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p><strong>servo</strong></p>
+                    <p><em>Example code:</em></p>
+                    <p><em> servo arm = create_servo(0, 0.4);</em></p>
+                    <p><em> servo_spin_angle(arm, 90);</em></p>
+                    <p>&nbsp;</p>
+                    <p>servo create_servo(int port, float ticks_per_millisecond);</p>
+                    <p><em>Creates a servo object and saves specified data to it.</em></p>
+                    <p>&nbsp;</p>
+                    <p>void servo_spin_ticks(servo servo_properties, int ticks);</p>
+                    <p>&nbsp;</p>
+                    <p>void servo_spin_angle(servo servo_properties, int angle);</p>
+                    <p>&nbsp;</p>
+                    <p>void servo_set_tpms(servo servo_properties, float tpms);</p>
+                    <p><em>sets the ticks_per_millisecond of the specified servo to specified number.</em></p>
+                    <p>&nbsp;</p>
+                    <p><strong>motor </strong></p>
+                    <p><em>Example code:</em></p>
+                    <p><em> NARmotor motor1 = create_motor(0, 52, 880);</em></p>
+                    <p><em> motor_move_mm(motor1, 56.5, 0.4);</em></p>
+                    <p>&nbsp;</p>
+                    <p>NARmotor create_motor(int port, int diameter, int ticks_per_cycle);</p>
+                    <p>&nbsp;</p>
+                    <p>float motor_convert_ticks_mm(int ticks);</p>
+                    <p>&nbsp;</p>
+                    <p>void motor_move_mm(motor motorName, float mm, int ticks_per_second);</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+        </div>
+
+    </main>
+</div>
+<script src="./material.min.js"></script>
+</body>
+</html>
